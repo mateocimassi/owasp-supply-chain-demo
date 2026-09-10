@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SecureShop</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+
+    <div class="logo">
+      SecureShop
+    </div>
+
+    <nav>
+      <span>Inicio</span>
+      <span>Productos</span>
+      <span>Contacto</span>
+    </nav>
+
+  </header>
+
+
+  <main class="container">
+
+    <section class="hero">
+
+      <div>
+
+        <span class="tag">
+          Tecnología
+        </span>
+
+        <h1>
+          Notebook Gamer Pro
+        </h1>
+
+        <p>
+          Potencia, rendimiento y velocidad para trabajar y jugar.
+        </p>
+
+        <div class="price">
+          $1200
+        </div>
+
+        <button id="discountBtn">
+          Aplicar descuento
+        </button>
+
+        <p id="result"></p>
+
+      </div>
+
+
+      <div class="product-image">
+        💻
+      </div>
+
+    </section>
+
+
+    <section class="features">
+
+      <div class="feature">
+        <h3>🚚 Envío gratis</h3>
+        <p>En compras mayores a $500.</p>
+      </div>
+
+      <div class="feature">
+        <h3>🔒 Compra segura</h3>
+        <p>Protegemos tus datos.</p>
+      </div>
+
+      <div class="feature">
+        <h3>💳 Pagos</h3>
+        <p>Varias formas de pago.</p>
+      </div>
+
+    </section>
+
+
+    <section class="security-card">
+
+      <div class="security-header">
+
+        <div>
+          <h2>Security Status</h2>
+          <p>Estado de dependencias del proyecto</p>
+        </div>
+
+        <div id="statusIndicator" class="status-indicator">
+          Analizando...
+        </div>
+
+      </div>
+
+
+      <div class="security-content">
+
+        <div class="main-counter">
+
+          <span id="vulnerabilityCount">
+            -
+          </span>
+
+          <p>
+            Vulnerabilidades
+          </p>
+
+        </div>
+
+
+        <div class="severity-grid">
+
+          <div class="severity critical">
+            <span id="criticalCount">0</span>
+            <p>Critical</p>
+          </div>
+
+          <div class="severity high">
+            <span id="highCount">0</span>
+            <p>High</p>
+          </div>
+
+          <div class="severity moderate">
+            <span id="moderateCount">0</span>
+            <p>Moderate</p>
+          </div>
+
+          <div class="severity low">
+            <span id="lowCount">0</span>
+            <p>Low</p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div id="packageSection" class="package-section">
+
+        <h3>
+          Dependencias con problemas
+        </h3>
+
+        <div id="packageList">
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
