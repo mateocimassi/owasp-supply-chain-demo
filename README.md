@@ -144,6 +144,9 @@ npm install
 # Levantar página
 npm start
 
+# Levantar página de vulnerabilidad
+npm run poc
+
 # Introducir vulnerabilidad
 npm install node.extend@1.1.6
 
