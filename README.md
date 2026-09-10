@@ -91,13 +91,22 @@ node.extend
 CRITICAL
 ```
 
-La parte importante para explicar es:
+### 5. Evidenciar el impacto: Prototype Pollution
 
-**La tienda sigue funcionando normalmente. El problema no está necesariamente en nuestro código, sino en una dependencia externa que agregamos al proyecto.**
+Además de detectar la dependencia vulnerable con `npm audit`, se puede ejecutar una prueba de concepto local y controlada:
 
-Eso es lo que queremos relacionar con **Software Supply Chain Failures**.
+```bash
+npm run poc
+```
 
-### 5. Corregirlo
+El script utiliza la versión vulnerable de node.extend para procesar un payload que contiene la propiedad especial __proto__.
+
+Antes de procesar el payload, un objeto nuevo no posee la propiedad isAdmin, luego de procesarlo con la version vulnerable, la propiedad pasa a ser true.
+
+Esto evidencia una vulnerabilidad de tipo Prototype Pollution. La librería vulnerable mezcla datos no confiables de forma insegura y permite modificar propiedades heredadas por otros objetos.
+
+
+### 6. Corregirlo
 
 Volver a la segunda terminal:
 
@@ -148,12 +157,3 @@ npm audit fix
 npm audit
 ```
 
-**Idea principal para explicar:** una aplicación moderna no contiene solamente nuestro código. También utiliza paquetes, librerías y dependencias de terceros. Si uno de esos componentes es vulnerable o está comprometido, puede introducir riesgos en nuestra aplicación aunque nuestro propio código esté bien.
-
-Para repetir la demo simplemente volver a instalar:
-
-```bash
-npm install node.extend@1.1.6
-```
-
-y después `npm audit`.
